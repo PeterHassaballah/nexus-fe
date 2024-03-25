@@ -11,7 +11,7 @@ const Sidebar = () => {
     return (
         <aside className='fixed z-20 bg-[#050505] h-full w-[12.5%] flex flex-col text-white lg:w-36 xl:w-52 items-center'>
             <div 
-                className='hidden sm:flex mt-2 lg:mx-12 xl:mx-16'>
+                className='mt-12 mb-8 hidden sm:flex mt-2 lg:mx-12 xl:mx-16'>
                     <Logo />
             </div>
             <div className='my-10 sm:m-0 lg:flex xl:text-xl'>
