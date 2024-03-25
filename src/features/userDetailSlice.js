@@ -7,7 +7,33 @@ export const getAllUsers = createAsyncThunk(
     'getAllUsers',
     async (args, { rejectWithValue }) => {
         try {
-            const response = await fetch('https://647de4bfaf984710854a8eb0.mockapi.io/users')
+            const response = await fetch('https://nexus-analytica-task.onrender.com/v1/users')
+            const result = await response.json()
+            return result
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
+)
+// average age
+export const getAvgUsers = createAsyncThunk(
+    'getAvgUsers',
+    async (args, { rejectWithValue }) => {
+        try {
+            const response = await fetch('https://nexus-analytica-task.onrender.com/v1/users/average')
+            const result = await response.json()
+            return result
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
+)
+// Stats
+export const getUsersCount = createAsyncThunk(
+    'getUsersCount',
+    async (args, { rejectWithValue }) => {
+        try {
+            const response = await fetch('https://nexus-analytica-task.onrender.com/v1/users/activeCount')
             const result = await response.json()
             return result
         } catch (error) {
@@ -23,7 +49,7 @@ export const createUser = createAsyncThunk(
     'createUser',
     async (data, { rejectWithValue }) => {
         try {
-            const res = await fetch('https://647de4bfaf984710854a8eb0.mockapi.io/users', {
+            const res = await fetch('https://nexus-analytica-task.onrender.com/v1/users', {
                 method: 'POST',
                 headers: {
                     "Content-Type": 'application/json',
@@ -44,7 +70,7 @@ export const editUser = createAsyncThunk(
     'editUser',
     async ({ id, values }, { rejectWithValue }) => {
         try {
-            const res = await fetch(`https://647de4bfaf984710854a8eb0.mockapi.io/users/${id}`, {
+            const res = await fetch(`https://nexus-analytica-task.onrender.com/v1/users/${id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": 'application/json',
@@ -65,7 +91,7 @@ export const deleteUser = createAsyncThunk(
     'deleteUser',
     async (id, { rejectWithValue }) => {
         try {
-            const response = await fetch(`https://647de4bfaf984710854a8eb0.mockapi.io/users/${id}`, {
+            const response = await fetch(`https://nexus-analytica-task.onrender.com/v1/users/${id}`, {
                 method: 'DELETE',
             })
             const result = await response.json()
@@ -82,7 +108,7 @@ export const searchUser = createAsyncThunk(
     'searchUser',
     async ({ searchData, select }, { rejectWithValue }) => {
         try {
-            const url = new URL('https://647de4bfaf984710854a8eb0.mockapi.io/users/');
+            const url = new URL('https://nexus-analytica-task.onrender.com/v1/users/');
             url.searchParams.append(select, searchData);
             const response = await fetch(url, {
                 method: 'GET',
@@ -102,7 +128,7 @@ export const sortUser = createAsyncThunk(
     'sortUser',
     async ({ sortBy, order }, { rejectWithValue }) => {
         try {
-            const url = new URL('https://647de4bfaf984710854a8eb0.mockapi.io/users/');
+            const url = new URL('https://nexus-analytica-task.onrender.com/v1/users/');
             url.searchParams.append('sortBy', sortBy);
             url.searchParams.append('order', order);
             const response = await fetch(url, {
@@ -121,7 +147,7 @@ export const createUserJson = createAsyncThunk(
     'uploadUsersList',
     async (data, { rejectWithValue }) => {
         try {
-            const res = await fetch('https://647de4bfaf984710854a8eb0.mockapi.io/users', {
+            const res = await fetch('https://nexus-analytica-task.onrender.com/v1/users/uploadUsers', {
                 method: 'POST',
                 headers: {
                     "Content-Type": 'application/json',
