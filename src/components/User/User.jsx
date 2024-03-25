@@ -81,7 +81,7 @@ const User = () => {
                             >
                                 <option value='name' className='text-sm xl:text-base'>Name</option>
                                 <option value='email' className='text-sm xl:text-base'>Email</option>
-                                <option value='role' className='text-sm xl:text-base'>Role</option>
+                                <option value='age' className='text-sm xl:text-base'>Age</option>
                             </select>
                         </div>
                         <div className='flex items-center'>
@@ -95,7 +95,7 @@ const User = () => {
                             >
                                 <option value='' className='text-sm xl:text-base'>Options</option>
                                 <option value='name' className='text-sm xl:text-base'>Name</option>
-                                <option value='role' className='text-sm xl:text-base'>Role</option>
+                                <option value='age' className='text-sm xl:text-base'>Age</option>
                             </select>
                         </div>
                         <div className='flex items-center text-sm xl:text-base justify-start mt-1 lg:flex-col lg:items-start'>
@@ -146,7 +146,7 @@ const User = () => {
                             <thead className='grid grid-cols-4 gap-4 text-center'>
                                 <tr className='font-bold text-xl py-2'>Name</tr>
                                 <tr className='font-bold text-xl py-2'>Email</tr>
-                                <tr className='font-bold text-xl py-2'>Role</tr>
+                                <tr className='font-bold text-xl py-2'>Age</tr>
                                 <tr className='font-bold text-xl py-2'>Actions</tr>
                             </thead>
                             <div>

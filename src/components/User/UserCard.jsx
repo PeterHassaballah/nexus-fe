@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { deleteUser } from '../../features/userDetailSlice'
 
 const UserCard = ({ user }) => {
-    const { name, email, role, id } = user
+    const { name, email, age, id } = user
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -19,7 +19,7 @@ const UserCard = ({ user }) => {
                             <h1>Name: {name}</h1>
                             <div>
                                 <p>Email: {email}</p>
-                                <p>Role: {role}</p>
+                                <p>Age: {age}</p>
                             </div>
                             <div className='flex items-center'>
                                 <MdPhotoLibrary
@@ -46,7 +46,7 @@ const UserCard = ({ user }) => {
                             <div className='grid grid-cols-4 gap-4'>
                                 <div className='flex justify-evenly items-center'>{name}</div>
                                 <div className='flex justify-evenly items-center'>{email}</div>
-                                <div className='flex justify-evenly items-center'>{role}</div>
+                                <div className='flex justify-evenly items-center'>{age}</div>
                                 <div className='flex justify-evenly items-center'>
                                     <div className='flex items-center'>
                                         <MdPhotoLibrary

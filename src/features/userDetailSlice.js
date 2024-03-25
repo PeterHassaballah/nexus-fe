@@ -116,7 +116,26 @@ export const sortUser = createAsyncThunk(
         }
     }
 )
+// bulk upload 
+export const createUserJson = createAsyncThunk(
+    'uploadUsersList',
+    async (data, { rejectWithValue }) => {
+        try {
+            const res = await fetch('https://647de4bfaf984710854a8eb0.mockapi.io/users', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            const result = await res.json()
+            return result
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
 
+)
 const initialState = {
     users: [],
     loading: true,

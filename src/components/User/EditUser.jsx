@@ -59,16 +59,16 @@ const EditUser = () => {
                         </div>
 
                         <div className='flex flex-col mb-4'>
-                            <label htmlFor='role' className='text-lg p-3'>
-                                Role
+                            <label htmlFor='age' className='text-lg p-3'>
+                                Age
                             </label>
                             <Field
                                 type='text'
-                                name='role'
+                                name='age'
                                 className='w-full p-2 outline outline-1 sm:w-72 lg:w-80 xl:w-96'
                             />
                             <div className='text-red-700 ml-2'>
-                                {errors.role && touched.role && <p>{errors.role}</p>}
+                                {errors.age && touched.age && <p>{errors.age}</p>}
                             </div>
                         </div>
 
