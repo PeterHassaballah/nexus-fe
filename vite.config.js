@@ -1,15 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  base: '/my-app/', // Add the base option here
   build: {
-    // generate .vite/manifest.json in outDir
     manifest: true,
     rollupOptions: {
-      // overwrite default .html entry
       input: './src/main.jsx',
     },
   },
   plugins: [react()],
-})
+});
